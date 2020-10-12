@@ -35,13 +35,7 @@ arr;
     this.empService.newEmpSkills(newEmployee.skills);
     this.empService.newEmpProject(newEmployee.project);
     this.empService.newEmpHCM(newEmployee.hcm);
-    // this.empService.getEmp().subscribe(response=>{
-    //   newEmployee=response as
-    // this.empService.getEmp().push(newEmployee);
-    
+    this.empService.getEmp().push(newEmployee);
     }
-    
-
-
-  } 
+ } 
 

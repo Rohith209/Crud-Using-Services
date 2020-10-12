@@ -13,80 +13,80 @@ export class EmployeeService {
 //emp = [];
   constructor(private http : HttpClient) {
   }
-    baseURL : string = 'https://jsonblob.com/api/f59f6b05-0b65-11eb-876a-4f19bf9f5d47';
-    // employees = [
-    //   {
-    //     "name": "Rohith",
-    //     "id": 872902,
-    //     "company": "Cognizant",
-    //     "skills": "Angular",
-    //     "project": "admin",
-    //     "hcm": "Sarah"
-    //   },
-    //   {
-    //     "name": "Raghav",
-    //     "id": 872903,
-    //     "company": "Cognizant",
-    //     "skills": "React",
-    //     "project": "user",
-    //     "hcm": "Satyam"
-    //   },
-    //   {
-    //     "name": "Sashank",
-    //     "id": 872904,
-    //     "company": "Cognizant",
-    //     "skills": "Angular",
-    //     "project": "CTS homepage",
-    //     "hcm": "Sarah"
-    //   },
-    //   {
-    //     "name": "Sandhya",
-    //     "id": 872905,
-    //     "company": "Cognizant",
-    //     "skills": "Angular",
-    //     "project": "Coffee shop",
-    //     "hcm": "Sarah"
-    //   },
-    //   {
-    //     "name": "Akhil",
-    //     "id": 12345,
-    //     "company": "Wipro",
-    //     "skills": "DotNet",
-    //     "project": "Java",
-    //     "hcm": "Srinivasan"
-    //   },
-    //   {
-    //     "name": "Goutham",
-    //     "id": 23456,
-    //     "company": "TCS",
-    //     "skills": "JAVA",
-    //     "project": "DevOps",
-    //     "hcm": "Muthu"
-    //   },
-    //   {
-    //     "name": "Pritam",
-    //     "id": 872906,
-    //     "company": "Cognizant",
-    //     "skills": "Angular",
-    //     "project": "Bank Enterprise",
-    //     "hcm": "Satyam"
-    //   }
-    // ];
+    //baseURL : string = 'https://jsonblob.com/api/f59f6b05-0b65-11eb-876a-4f19bf9f5d47';
+    employees = [
+      {
+        "name": "Rohith",
+        "id": 872902,
+        "company": "Cognizant",
+        "skills": "Angular",
+        "project": "admin",
+        "hcm": "Sarah"
+      },
+      {
+        "name": "Raghav",
+        "id": 872903,
+        "company": "Cognizant",
+        "skills": "React",
+        "project": "user",
+        "hcm": "Satyam"
+      },
+      {
+        "name": "Sashank",
+        "id": 872904,
+        "company": "Cognizant",
+        "skills": "Angular",
+        "project": "CTS homepage",
+        "hcm": "Sarah"
+      },
+      {
+        "name": "Sandhya",
+        "id": 872905,
+        "company": "Cognizant",
+        "skills": "Angular",
+        "project": "Coffee shop",
+        "hcm": "Sarah"
+      },
+      {
+        "name": "Akhil",
+        "id": 12345,
+        "company": "Wipro",
+        "skills": "DotNet",
+        "project": "Java",
+        "hcm": "Srinivasan"
+      },
+      {
+        "name": "Goutham",
+        "id": 23456,
+        "company": "TCS",
+        "skills": "JAVA",
+        "project": "DevOps",
+        "hcm": "Muthu"
+      },
+      {
+        "name": "Pritam",
+        "id": 872906,
+        "company": "Cognizant",
+        "skills": "Angular",
+        "project": "Bank Enterprise",
+        "hcm": "Satyam"
+      }
+    ];
     
 
-    // getEmp(){
-    //    this.http.get(this.baseURL).subscribe(Response =>{
-    //     console.log(Response);
-    //     this.employeesArray = Response;
-    //     console.log(this.employeesArray);
-    //     this.EmployeeService.e = this.employeesArray;
-
-    //   });
-    //   return this.employeesArray;       
-    // }
     getEmp(){
-      return this.http.get(this.baseURL);
+      //  this.http.get(this.baseURL).subscribe(Response =>{
+      //   console.log(Response);
+      //   this.employeesArray = Response;
+      //   console.log(this.employeesArray);
+      //   this.EmployeeService.e = this.employeesArray;
+
+      // });
+      return this.employees;       
     }
+    // getEmp(){
+    //   return this.http.get(this.baseURL);
+    // }
     private empNameSource = new BehaviorSubject("default name");
     currentName = this.empNameSource.asObservable();
     private empIDSource = new BehaviorSubject(1234);

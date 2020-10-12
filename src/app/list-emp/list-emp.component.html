@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of arr; index as i">
+        <tr *ngFor = "let employee of employees; index as i">
             <td>{{employee.name}}</td>
             <td>{{employee.id}}</td>
             <td>{{employee.company}}</td>
@@ -20,7 +20,7 @@
             <td>{{employee.project}}</td>
             <td>{{employee.hcm}}</td>
             <span>
-                <td><button type="button" class="btn btn-info" (click)="editEmployee(employee,i)">Edit</button></td>                
+                <!-- <td><button type="button" class="btn btn-info" (click)="editEmployee(employee,i)">Edit</button></td>                 -->
                 <td><button type="button" class="btn btn-danger" (click)="onDelete(employee)">Delete</button></td>
             </span>
         </tr>

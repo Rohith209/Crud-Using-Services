@@ -11,28 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListEmpComponent implements OnInit {
 employees : any = [];
-
-
 arr;
   constructor(private empService : EmployeeService) { }
 
   ngOnInit(){
     
-     this.empService.getEmp().subscribe( data => {
-      this.arr  = data; 
-    })
+    //  this.empService.getEmp().subscribe( data => {
+    //   this.arr  = data; 
+   // })
+   this.employees = this.empService.getEmp();
   }
   onDelete(employee) {
-    let index = this.arr.indexOf(employee);
-    this.arr.splice(index,1);
+    let index = this.employees.indexOf(employee);
+    this.employees.splice(index,1);
   }
-  
-  
-//   onEdit(employee : Employee){
-
-//     localStorage.removeItem('editEmp');
-//     localStorage.setItem('editEmp', employee.id.toString());
-//     this.router.navigate(['add-emp']);
-
-// }
 }

@@ -9,11 +9,9 @@ import { FormGroup } from '@angular/forms';
 })
 export class EditEmpComponent implements OnInit {
 editForm :   FormGroup;
-  constructor( private empService : EmployeeService) { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
-onSubmit(){
-  
-}
+
 }
