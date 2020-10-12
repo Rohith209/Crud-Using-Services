@@ -1,0 +1,31 @@
+<h5 class="text-center" style="background-color: blueviolet; color: cornsilk;">Employee details</h5>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Associate ID</th>
+            <th>Company</th>
+            <th>Skills</th>
+            <th>Project</th>
+            <th>HCM</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of arr; index as i">
+            <td>{{employee.name}}</td>
+            <td>{{employee.id}}</td>
+            <td>{{employee.company}}</td>
+            <td>{{employee.skills}}</td>
+            <td>{{employee.project}}</td>
+            <td>{{employee.hcm}}</td>
+            <span>
+                <td><button type="button" class="btn btn-info" (click)="editEmployee(employee,i)">Edit</button></td>                
+                <td><button type="button" class="btn btn-danger" (click)="onDelete(employee)">Delete</button></td>
+            </span>
+        </tr>
+    </tbody>
+</table>
+
+
+

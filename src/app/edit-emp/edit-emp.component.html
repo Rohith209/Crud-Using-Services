@@ -1,0 +1,24 @@
+<div class="container text-center">
+    <h3> Edit Employee</h3>
+    <div class="container">
+        <form  action="" method="POST">
+            <label>Name : </label>
+            <input ngModel name="name" #name="ngModel" type="text" name="empName" id="empName" placeholder="Employee Name"><br>
+            <label>ID : </label>
+            <input ngModel name="id" #id="ngModel" type="number" name="empid" id="empid" placeholder="Employee ID"><br>
+            <label>Company : </label>
+            <input ngModel name="company" #company="ngModel" type="text" name="empComp" id="empCompany" placeholder="Company Name"><br>
+            <label>Skills : </label>
+            <input ngModel name="skills" #skills="ngModel" type="text" name="empSkills" id="empSkills" placeholder="Employee Skills"><br>
+            <label>Project : </label>
+            <input ngModel name="project" #project="ngModel" type="text" name="empProject" id="empProject" placeholder="Employee Project"><br>
+            <label>HCM : </label>
+            <input ngModel name="hcm" #hcm="ngModel" type="text" name="empHcm" id="empHcm" placeholder="Employee HCM"><br>
+            <span>
+                <button class="btn btn-info" (click)="updateEmployee(name,id,company,skills,project,hcm)">Update</button>
+                <button type="reset" class="btn btn-danger">Cancel</button>
+            </span>
+
+        </form>
+    </div>
+</div>
