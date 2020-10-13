@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { } from 'rxjs'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,13 +10,15 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { ListEmpComponent } from './list-emp/list-emp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RXJSOpsComponent } from './rxjsops/rxjsops.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmpComponent,
     EditEmpComponent,
-    ListEmpComponent
+    ListEmpComponent,
+    RXJSOpsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
