@@ -1,31 +1,96 @@
-<h5 class="text-center" style="background-color: blueviolet; color: cornsilk;">Employee details</h5>
-<table class="table table-striped">
+<div>
+  <h5 class="text-center" style="background-color: blueviolet; color: cornsilk">
+    Employee details
+  </h5>
+
+  <table class="table table-striped">
     <thead>
-        <tr>
-            <th>Name</th>
-            <th>Associate ID</th>
-            <th>Company</th>
-            <th>Skills</th>
-            <th>Project</th>
-            <th>HCM</th>
-            <th>Options</th>
-        </tr>
+      <tr>
+        <th>Name</th>
+        <th>Associate ID</th>
+        <th>Company</th>
+        <th>Skills</th>
+        <th>Project</th>
+        <th>HCM</th>
+        <th>Options</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of employees; index as i">
-            <td>{{employee.name}}</td>
-            <td>{{employee.id}}</td>
-            <td>{{employee.company}}</td>
-            <td>{{employee.skills}}</td>
-            <td>{{employee.project}}</td>
-            <td>{{employee.hcm}}</td>
-            <span>
-                <td><button type="button" class="btn btn-info" (click)="editEmployee(employee,i)">Edit</button></td>                
-                <td><button type="button" class="btn btn-danger" (click)="onDelete(employee)">Delete</button></td>
-            </span>
-        </tr>
+      <tr *ngFor="let employee of employees; index as i">
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.name }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.name" />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.id }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.id" />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.company }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.company" />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.skills }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.skills" />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.project }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.project" />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="!editMode[i]">{{ employee.hcm }}</span>
+          <span *ngIf="editMode[i]">
+            <input type="text" [(ngModel)]="employee.hcm" />
+          </span>
+        </td>
+        <span>
+          <td>
+            <button
+              type="button"
+              class="btn btn-info"
+              (click)="editEmployee(employee, i)"
+              *ngIf="!editMode[i]"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="saveEmployee(employee, i)"
+              *ngIf="editMode[i]"
+            >
+              Save
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDelete(employee)"
+            >
+              Delete
+            </button>
+          </td>
+        </span>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>
 
+<div>
+  <a type="button" class="btn btn-warning" routerLink="/add-emp"
+    >Add Employee</a
+  >
+</div>
 
-
+<router-outlet></router-outlet>

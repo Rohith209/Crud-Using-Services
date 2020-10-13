@@ -14,4 +14,6 @@ editForm :   FormGroup;
   ngOnInit(): void {
   }
 
+  updateEmployee(name,id,company,skills,project,hcm){}
+
 }

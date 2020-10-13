@@ -6,21 +6,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', 
-    component : ListEmpComponent
+    path: '',
+    component: ListEmpComponent,
   },
   {
-    path: 'edit-emp', 
-    component : EditEmpComponent
+    path: 'edit-emp',
+    component: EditEmpComponent,
   },
   {
-    path: 'add-emp', 
-    component : AddEmpComponent
-  }
+    path: 'add-emp',
+    component: AddEmpComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
